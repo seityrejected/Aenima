@@ -1,7 +1,7 @@
 <config>
 	<!-- alert zombies -->
 
-	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='AINoiseSeekDist']/@value">96</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='AINoiseSeekDist']/@value">128</set>
 	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='AITask']/@value">BreakBlock|
 	DestroyArea|
 	Territorial|
@@ -11,7 +11,6 @@
 	Look|
 	Wander|
 	</set>
-	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='SightRange']/@value">96</set> <!--was 120 -->
+	<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='SightRange']/@value">128</set> <!--was 120 -->
 
 </config>
-
