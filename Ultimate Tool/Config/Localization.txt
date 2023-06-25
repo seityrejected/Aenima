@@ -1,0 +1,7 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text
+
+
+UltimateToolSchematic,items,Tool,,,Ultimate Tool Schematic
+UltimateTool,items,Tool,,,Ultimate Tool
+UltimateToolSchematicDesc,items,Tool,,,Schematic steel ultimate tool.
+UltimateToolSteelDesc,items,Tool,,,The ultimate tool every survivor needs.\n\nRepair with Repair Kit\nScraps to Steel Tool Parts

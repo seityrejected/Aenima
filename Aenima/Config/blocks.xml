@@ -1,0 +1,7 @@
+<configs>
+
+	<append xpath="/blocks/block[@name='treeMaster']">
+		<drop event="Destroy" name="foodHoney" prob=".2" count="1"/>
+	</append>
+
+</configs>

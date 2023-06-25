@@ -1,0 +1,413 @@
+<config>	
+	<!-- Foods -->
+	<append xpath="/items">
+		
+		<!-- banana peanutbutter sandwich -->
+		
+		<item name="foodBananaPeanutbuttersandwich">
+			<property name="CustomIcon" value="foodTunaFishGravyToast" />
+			<property name="CustomIconTint" value="F6C492" />
+			<property name="Tags" value="food"/>
+			<property name="HoldType" value="31"/>
+			<property name="DisplayType" value="food"/>
+			<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			<property name="Material" value="Mplants"/>
+			<property name="Stacknumber" value="10"/> <!-- STK resource -->
+			<property name="EconomicValue" value="250"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="CraftingIngredientTime" value="10"/>
+			<property name="DescriptionKey" value="foodBananaPeanutbuttersandwichDesc" />
+			<!-- 14 is large round hold -->
+			<property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="player_eating"/>
+			</property>
+			<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+			<effect_group tiered="false" name="Food Tier 4">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="90"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="50"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="50"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			</effect_group>
+		</item>
+
+		<!-- Energy Drinks -->
+
+
+		<item name="drinkBangPeach">
+			<property name="CustomIcon" value="drinkJarPureMineralWater" />
+			<property name="CustomIconTint" value="F6C492" />
+			<property name="HoldType" value="3" />
+			<property name="DisplayType" value="water" />
+			<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab" />
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+			<property name="Material" value="Mglass" />
+			<property name="Stacknumber" value="50" /> <!-- STK drink -->
+			<property name="Weight" value="10" />
+			<property name="DescriptionKey" value="drinkBangPeachDesc" />
+			<property name="EconomicValue" value="68" />
+			<property class="Action0">
+				<property name="Class" value="Eat" />
+				<property name="Delay" value="1.0" />
+				<property name="Use_time" value="..." />
+				<property name="Sound_start" value="player_drinking" />
+				<property name="Create_item" value="drinkJarEmpty" />
+			</property>
+			<property name="Group" value="Food/Cooking,CFDrink/Cooking" />
+			<effect_group tiered="false" name="Drink Tier 0/1">
+				<requirement name="NotHasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$waterAmountAdd" operation="add" value="70" />
+				<display_value name="dStaminaRegen" value=".50" />
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.5" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffAutoWeaponsComplete" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$buffMegaCrushDuration" operation="add" value="123" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$buffMegaCrushDuration" operation="set" value="363">
+				</triggered_effect>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffExtinguishFire" />
+			</effect_group>
+		</item>
+
+		<item name="drinkBlueberryBliss">
+			<property name="CustomIcon" value="drinkJarPureMineralWater" />
+			<property name="CustomIconTint" value="4f86f7" />
+			<property name="HoldType" value="3" />
+			<property name="DisplayType" value="water" />
+			<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab" />
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+			<property name="Material" value="Mglass" />
+			<property name="Stacknumber" value="50" /> <!-- STK drink -->
+			<property name="Weight" value="10" />
+			<property name="DescriptionKey" value="drinkBlueberryBlissDesc" />
+			<property name="EconomicValue" value="68" />
+			<property class="Action0">
+				<property name="Class" value="Eat" />
+				<property name="Delay" value="1.0" />
+				<property name="Use_time" value="..." />
+				<property name="Sound_start" value="player_drinking" />
+				<property name="Create_item" value="drinkJarEmpty" />
+			</property>
+			<property name="Group" value="Food/Cooking,CFDrink/Cooking" />
+			<effect_group tiered="false" name="Drink Tier 0/1">
+				<requirement name="NotHasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$waterAmountAdd" operation="add" value="90" />
+				<display_value name="dStaminaRegen" value=".25" />
+				<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.25" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffAutoWeaponsComplete" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$buffMegaCrushDuration" operation="add" value="123" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$buffMegaCrushDuration" operation="set" value="363">
+				</triggered_effect>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffExtinguishFire" />
+			</effect_group>
+		</item>
+
+		<item name="drinkRagingRaspberry">
+			<property name="CustomIcon" value="drinkJarPureMineralWater" />
+			<property name="CustomIconTint" value="E30B5C" />
+			<property name="HoldType" value="3" />
+			<property name="DisplayType" value="water" />
+			<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab" />
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+			<property name="Material" value="Mglass" />
+			<property name="Stacknumber" value="50" /> <!-- STK drink -->
+			<property name="Weight" value="10" />
+			<property name="DescriptionKey" value="drinkRagingRaspberryDesc" />
+			<property name="EconomicValue" value="68" />
+			<property class="Action0">
+				<property name="Class" value="Eat" />
+				<property name="Delay" value="1.0" />
+				<property name="Use_time" value="..." />
+				<property name="Sound_start" value="player_drinking" />
+				<property name="Create_item" value="drinkJarEmpty" />
+			</property>
+			<property name="Group" value="Food/Cooking,CFDrink/Cooking" />
+			<effect_group tiered="false" name="Drink Tier 0/1">
+				<requirement name="NotHasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$waterAmountAdd" operation="add" value="90" />
+				<display_value name="dStaminaRegen" value=".50" />
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="0.33" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffAutoWeaponsComplete" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$buffMegaCrushDuration" operation="add" value="123" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$buffMegaCrushDuration" operation="set" value="363">
+				</triggered_effect>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffExtinguishFire" />
+			</effect_group>
+		</item>
+
+		<item name="drinkStrawberryMilk">
+			<property name="CustomIcon" value="drinkJarPureMineralWater" />
+			<property name="CustomIconTint" value="F4E1EA" />
+			<property name="HoldType" value="3" />
+			<property name="DisplayType" value="water" />
+			<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab" />
+			<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+			<property name="Material" value="Mglass" />
+			<property name="Stacknumber" value="50" /> <!-- STK drink -->
+			<property name="Weight" value="10" />
+			<property name="DescriptionKey" value="drinkStrawberryMilkDesc" />
+			<property name="EconomicValue" value="68" />
+			<property class="Action0">
+				<property name="Class" value="Eat" />
+				<property name="Delay" value="1.0" />
+				<property name="Use_time" value="..." />
+				<property name="Sound_start" value="player_drinking" />
+				<property name="Create_item" value="drinkJarEmpty" />
+			</property>
+			<property name="Group" value="Food/Cooking,CFDrink/Cooking" />
+			<effect_group tiered="false" name="Drink Tier 0/1">
+				<requirement name="NotHasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$waterAmountAdd" operation="add" value="90" />
+				<display_value name="dStaminaRegen" value=".50" />
+				<passive_effect name="ReloadSpeedMultiplier" operation="perc_add" value="0.1" />
+				<passive_effect name="WeaponHandling" operation="perc_add" value="0.1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffProcessConsumables" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffAutoWeaponsComplete" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$buffMegaCrushDuration" operation="add" value="123" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="$buffMegaCrushDuration" operation="set" value="363">
+				</triggered_effect>
+			</effect_group>
+
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+					buff="buffExtinguishFire" />
+			</effect_group>
+		</item>
+		
+		<!-- Meals -->
+		
+		<item name="foodHamSandwich">
+			  <property name="Tags" value="food"/>
+			  <property name="HoldType" value="31"/>
+			  <property name="DisplayType" value="food"/>
+			  <property name="CustomIcon" value="foodShamSandwich"/>
+			  <property name="CustomIconTint" value="F4E1EA" />
+			  <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+			  <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+			  <property name="Material" value="Morganic"/>
+			  <property name="Stacknumber" value="10"/>
+			  <!-- STK food -->
+			  <property name="DescriptionKey" value="foodHamSandwichDesc" />
+			  <property name="EconomicValue" value="16"/>
+			  <!-- <property name="UnlockedBy" value="perkBachelor"/> -->
+			  <property class="Action0">
+				<property name="Class" value="Eat"/>
+				<property name="Delay" value="1.0"/>
+				<property name="Use_time" value="..."/>
+				<property name="Sound_start" value="player_eating"/>
+				<!--  prop create item here -->
+			  </property>
+			  <property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+			  <effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="15"/>
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+			  </effect_group>
+			</item>
+			
+			<item name="foodBeefTacos">
+				<property name="Tags" value="food"/>
+				<property name="HoldType" value="31"/>
+				<property name="DisplayType" value="food"/>
+				<property name="CustomIcon" value="foodFishTacos"/>
+				<property name="CustomIconTint" value="e7af00" />
+				<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>
+				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+				<property name="Material" value="Mplants"/>
+				<property name="Stacknumber" value="10"/> <!-- STK resource -->
+				<property name="EconomicValue" value="92"/>
+				<property name="EconomicBundleSize" value="5"/>
+				<property name="CraftingIngredientTime" value="10"/>
+				<!-- 14 is large round hold -->
+				<property class="Action0">
+					<property name="Class" value="Eat"/>
+					<property name="Delay" value="1.0"/>
+					<property name="Use_time" value="..."/>
+					<property name="Sound_start" value="player_eating"/>
+				</property>
+				<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+				<effect_group tiered="false" name="Food Tier 3">
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="45"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="50"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+				</effect_group>
+			</item>
+
+			<item name="foodSalmon">
+				<property name="CustomIcon" value="foodBoiledMeat" />
+				<property name="CustomIconTint" value="FFDAB9" />
+				<property name="Extends" value="foodGrilledMeat" />
+				<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
+				<property name="Tags" value="food" />
+				<property name="DisplayType" value="food" />
+				<property name="EconomicValue" value="24" />
+				<property name="DescriptionKey" value="foodSalmonDesc" />
+				<property name="Group" value="Food/Cooking,CFFood/Cooking" />
+				<property class="Action0">
+					<property name="Class" value="Eat" />
+					<property name="Delay" value="2.1" />
+					<property name="Use_time" value="..." />
+					<property name="Sound_start" value="player_eating" />
+				</property>
+				<effect_group tiered="false" name="Food Tier 0">
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+						cvar="$foodAmountAdd" operation="add" value="8" />
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+						cvar="foodHealthAmount" operation="add" value="5" />
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+						cvar=".foodStaminaBonusAdd" operation="add" value="3" />
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff"
+						buff="buffProcessConsumables" />
+				</effect_group>
+			</item>
+		
+			<item name="foodChickenStew">
+				<property name="Tags" value="food"/>
+				<property name="CustomIcon" value="foodMeatStew"/> <property name="CustomIconTint" value="f2f2ed"/>
+				<property name="HoldType" value="31"/>
+				<property name="DisplayType" value="foodWater"/>
+				<property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab"/>				
+				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+				<property name="Material" value="Morganic"/>
+				<property name="Stacknumber" value="10"/>
+				<property name="EconomicValue" value="250"/>
+				<property name="UnlockedBy" value="perkMasterChef"/>
+				<property class="Action0">
+					<property name="Class" value="Eat"/>
+					<property name="Delay" value="1.0"/>
+					<property name="Use_time" value="..."/>
+					<property name="Sound_start" value="player_drinking"/>
+				</property>
+				<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+				<effect_group tiered="false" name="Food Tier 6">
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="30"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="85"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="75"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="50"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+				</effect_group>
+			</item>
+			
+			<item name="drinkFruitSmoothie">
+				<property name="CustomIcon" value="drinkYuccaJuiceSmoothie"/> <property name="CustomIconTint" value="63b8c2"/>
+				<property name="HoldType" value="3"/>
+				<property name="DisplayType" value="drinkYuccaSmoothie"/>
+				<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
+				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+				<property name="Material" value="Mglass"/>
+				<property name="Stacknumber" value="10"/>
+				<property name="Weight" value="10"/>
+				<property name="EconomicValue" value="156"/>
+				<property name="UnlockedBy" value="perkMasterChef"/>
+				<property class="Action0">
+					<property name="Class" value="Eat"/>
+					<property name="Delay" value="1.0"/>
+					<property name="Use_time" value="..."/>
+					<property name="Sound_start" value="player_drinking"/>
+					<property name="Create_item" value="drinkJarEmpty"/>
+				</property>
+				<property name="Group" value="Food/Cooking,CFDrink/Cooking"/>
+			<effect_group tiered="false" name="Drink Tier 6">
+				<requirement name="NotHasBuff" buff="buffIsOnFire"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="100"/>
+					<display_value name="dStaminaRegen" value=".15"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="35"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="25"/>
+					<display_value name="dHypothermalResist" value="30"/>
+					<display_value name="dDuration" value="900"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffYuccaJuiceSmoothieDuration" operation="add" value="903"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffYuccaJuiceSmoothieDuration" operation="set" value="2703">
+					<requirement name="CVarCompare" cvar="$buffYuccaJuiceSmoothieDuration" operation="GT" value="2703"/></triggered_effect>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables,buffYuccaJuiceSmoothie"/>
+			</effect_group>
+			<effect_group tiered="false">
+				<requirement name="HasBuff" buff="buffIsOnFire"/>
+					<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+			</effect_group>
+			</item>
+			<item name="drinkJarBlueBeer">
+				<property name="CustomIcon" value="drinkJarBeer"/> <property name="CustomIconTint" value="036bfc"/>//
+				<property name="HoldType" value="3"/>
+				<property name="Meshfile" value="@:Other/Items/Food/bottled_waterPrefab.prefab"/>
+				<property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+				<property name="Material" value="Mglass"/>
+				<property name="Weight" value="10"/>
+				<property name="Stacknumber" value="10"/> <!-- STK drink -->
+				<property name="EconomicValue" value="100"/>
+				<property name="UnlockedBy" value="perkMasterChef"/>
+				<property name="DisplayType" value="waterBeer"/>
+				<property name="Group" value="Food/Cooking,CFDrink/Cooking,Medical"/>
+				<property class="Action0">
+					<property name="Class" value="Eat"/>
+					<property name="Delay" value="2"/>
+					<property name="Use_time" value="..."/>
+					<property name="Sound_start" value="player_drinking"/>
+					<property name="Create_item" value="drinkJarEmpty"/>
+				</property>
+				<effect_group tiered="false" name="Drink Tier 6">
+					<requirement name="NotHasBuff" buff="buffIsOnFire"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="100"/>
+						<display_value name="dStaminaRegen" value=".4"/>
+						<display_value name="dEntityDamageBrawling" value="3"/>
+						<display_value name="dStunResist" value="1"/>
+						<display_value name="dDuration" value="45"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBeerDuration" operation="add" value="48"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffBeerDuration" operation="set" value="138">
+							<requirement name="CVarCompare" cvar="$buffBeerDuration" operation="GT" value="138"/></triggered_effect>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffBeer"/>
+				</effect_group>
+				<effect_group tiered="false">
+					<requirement name="HasBuff" buff="buffIsOnFire"/>
+						<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffExtinguishFire"/>
+				</effect_group>
+			</item>
+			
+		<!-- End Foods -->
+		
+		</append>
+		
+		</config>

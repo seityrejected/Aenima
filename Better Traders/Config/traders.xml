@@ -1,0 +1,69 @@
+<configs>
+
+		<removeattribute xpath="/traders/trader_info[@id='1']/@open_time" />
+		<removeattribute xpath="/traders/trader_info[@id='1']/@close_time" />
+
+		<removeattribute xpath="/traders/trader_info[@id='6']/@open_time" />
+		<removeattribute xpath="/traders/trader_info[@id='6']/@close_time" />
+		
+		<removeattribute xpath="/traders/trader_info[@id='2']/@open_time" />
+		<removeattribute xpath="/traders/trader_info[@id='2']/@close_time" />
+		
+		<removeattribute xpath="/traders/trader_info[@id='7']/@open_time" />
+		<removeattribute xpath="/traders/trader_info[@id='7']/@close_time" />
+		
+		<removeattribute xpath="/traders/trader_info[@id='8']/@open_time" />
+		<removeattribute xpath="/traders/trader_info[@id='8']/@close_time" />
+		
+		<append xpath="/traders/trader_item_groups/trader_item_group[@name='generalResources']">
+			<item name="ammoGasCan" count="100" prob=".5"/>
+		</append>
+		
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='rareMedicine']">
+			<item name="medicalFirstAidKit"/>
+			<item name="toolBeaker"/>
+			<item name="drugAntibiotics"/>
+			<item name="drugFortBites"/>
+			<item name="drugRecog"/>
+			<item name="drugSteroids"/>
+			<item name="drinkJarGrandpasMoonshine"/>
+			<item name="drinkJarGrandpasAwesomeSauce"/>
+			<item name="drinkJarGrandpasLearningElixir"/>
+			<item name="apparelCigar"/>
+			<item name="drugAdrenaline"/>
+			<item name="medicalAdvancedFirstAidBandage"/>
+			<item name="medicalAdvancedFirstAidKit"/>
+		</set>
+		
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoAll']/item[@name='ammo9mmBulletBall']/@count">60,225</set>  <!-- default 40,150 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoAll']/item[@name='ammo9mmBulletAP']/@count">60,225</set>  <!-- default 40,150 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoAll']/item[@name='ammo762mmBulletBall']/@count">60,225</set>  <!-- default 20,100 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoAll']/item[@name='ammo762mmBulletAP']/@count">60,225</set>  <!-- default 20,100 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoAll']/item[@name='ammoShotgunShell']/@count">60,225</set>  <!-- default 15,100 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoAll']/item[@name='ammoShotgunSlug']/@count">60,225</set>  <!-- default 6,25 -->
+		
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoSupplies']/item[@name='resourceBulletCasing']/@count">60,600</set>  <!-- default 20,200 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoSupplies']/item[@name='resourceBulletTip']/@count">60,600</set>  <!-- default 20,200 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='ammoSupplies']/item[@name='resourceGunPowder']/@count">60,600</set>  <!-- default 20,200 -->
+		
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='generalResources']/item[@name='resourceOilShale']/@count">80,240</set>  <!-- default 20,60 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='generalResources']/item[@name='resourceCoal']/@count">80,240</set>  <!-- default 20,60 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='generalResources']/item[@name='resourcePotassiumNitratePowder']/@count">80,240</set>  <!-- default 20,60 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='generalResources']/item[@name='resourceGunPowder']/@count">80,240</set>  <!-- default 3,30 -->
+		
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='traderAlways']/item[@group='groupAllAmmo']/@count">14,50</set>  <!-- default 3 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='traderAlways']/item[@group='ammoSupplies']/@count">14,50</set>  <!-- default 2 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='traderAlways']/item[@name='resourcePotassiumNitratePowder']/@count">80,240</set>  <!-- default 2,5 -->
+		
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='traderGeneral']/item[@group='groupAllAmmo']/@count">14,50</set>  <!-- default 2,4 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='traderGeneral']/item[@group='groupAllAmmo']/@prob">5</set>  <!-- default 2 -->
+		<set xpath="/traders/trader_item_groups/trader_item_group[@name='traderGeneral']/item[@group='ammoSupplies']/@count">14,50</set>  <!-- default 1,3 -->
+
+	<set xpath="/traders/trader_info[@id='1']/@reset_interval">2</set>
+    <set xpath="/traders/trader_info[@id='6']/@reset_interval">2</set>
+    <set xpath="/traders/trader_info[@id='2']/@reset_interval">2</set>
+    <set xpath="/traders/trader_info[@id='7']/@reset_interval">2</set>
+    <set xpath="/traders/trader_info[@id='8']/@reset_interval">2</set>
+	
+	
+</configs>

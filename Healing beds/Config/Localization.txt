@@ -1,0 +1,4 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text
+
+
+buffRestingToolTip,buffs,Buff,,,You are resting in bed

@@ -1,0 +1,12 @@
+<configs>
+
+
+<append xpath="//block[@name='goreBlockHumanCorpse' or @name='bodyBagBlack']">
+		<property name="Class" value="Loot"/>
+		<property name="LootList" value="goreBlocks"/>
+	</append>
+	
+	
+	
+</configs>
+	

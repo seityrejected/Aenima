@@ -1,0 +1,12 @@
+<config>
+
+
+			<!-- Lootable Body Bags -->
+			
+			<append xpath="/blocks/block[contains(@name, 'bodyBag')]">
+				<property name="Class" value="Loot"/>
+				<property name="LootList" value="junk"/>
+			</append>
+
+
+</config>

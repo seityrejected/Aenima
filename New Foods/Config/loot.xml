@@ -1,0 +1,24 @@
+<config>
+
+	<!-- Foods -->
+	
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodCommon']">
+		<item name="foodHamSandwich" count="1,3" loot_prob_template="veryLow" />
+		<item name="foodBeefTacos" count="1,3" loot_prob_template="veryLow" />
+		<item name="foodChickenStew" count="1,5" loot_prob_template="veryLow" />
+		<item name="drinkFruitSmoothie" count="1,5" loot_prob_template="veryLow" />
+		<item name="drinkJarBlueBeer" count="1,5" loot_prob_template="veryLow" />
+		<item name="foodBananaPeanutbuttersandwich" loot_prob_template="veryLow" />
+	</append>
+	
+	<!-- Energy Drink -->
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksUncommon']">
+		<item name="drinkBangPeach" count="1,2" loot_prob_template="veryLow" />
+		<item name="drinkBlueberryBliss" count="1,2" loot_prob_template="veryLow" />
+		<item name="drinkStrawberryMilk" count="1,2" loot_prob_template="veryLow" />
+		<item name="drinkRagingRaspberry" count="1,2" loot_prob_template="veryLow" />
+	</append>
+
+
+</config>

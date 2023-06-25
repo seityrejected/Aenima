@@ -1,0 +1,13 @@
+<config>
+			
+				<!-- Ultimate Tool -->
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupToolsT3']">
+		<item name="ultimateToolSchematic" />
+	</append>
+
+	<append xpath="lootcontainers/lootgroup[@name='groupToolsT3']">
+		<item name="UltimateTool" />
+	</append>
+
+</config>

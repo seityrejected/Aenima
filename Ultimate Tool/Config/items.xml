@@ -1,0 +1,114 @@
+<config>
+	<!-- Ultimate Tool -->
+
+	<append xpath="/items">
+		<item name="UltimateTool">
+			<property name="Tags"
+				value="axe,melee,grunting,medium,tool,longShaft,attStrength,perkMiner69r,perkMotherLode,canHaveCosmetic" />
+			<property name="DisplayType" value="melee" />
+			<property name="HoldType" value="17" />
+			<property name="Meshfile" value="@:Other/Items/Weapons/Melee/Axe/steelAxePrefab.prefab" />
+			<property name="Material" value="MmeleeToolAllSteel" />
+			<property name="Weight" value="5" />
+			<property name="RepairTools" value="resourceRepairKit" />
+			<property name="DegradationBreaksAfter" value="false" />
+			<property name="SoundJammed" value="ItemNeedsRepair" />
+			<property name="EconomicValue" value="800" />
+			<property name="SoundDestroy" value="metaldestroy1" />
+			<property name="UnlockedBy" value="ultimateToolSchematic" />
+			<property name="ShowQuality" value="true" />
+			<property name="Extends" value="meleeToolAxeT1IronFireaxe" />
+			<property name="CustomIcon" value="meleeToolAxeT2SteelAxe" />
+			<property name="CustomIconTint" value="0066ff" />
+			<property name="DropMeshfile" value="@:Other/Items/Weapons/Melee/Axe/steelAxePrefab.prefab" />
+			<property name="Group" value="Tools/Traps" />
+			<property name="DescriptionKey" value="UltimateToolSteelDesc" />
+			<property class="Action0">
+				<property name="Class" value="DynamicMelee" />
+				<property name="Sphere" value=".15" />
+				<property name="Sound_start" value="axe_swinglight" />
+				<property name="ToolCategory.harvestingTools" value="1" param1="1" />
+				<property name="ToolCategory.Butcher" value="0" param1="4" />
+				<property name="GrazeStart" value=".4" />
+				<property name="GrazeEnd" value=".5" />
+				<property name="SwingDegrees" value="50" />
+				<property name="UseGrazingHits" value="true" />
+				<property name="SwingAngle" value="180" />
+				<property name="Sound_harvesting" value="open_animal" param1="organic" />
+			</property>
+			<property class="Action1">
+				<property name="Class" value="DynamicMelee" />
+				<property name="Sphere" value=".15" />
+				<property name="Sound_start" value="axe_swingheavy" />
+				<property name="ToolCategory.harvestingTools" value="1" param1="1" />
+				<property name="UsePowerAttackAnimation" value="true" />
+				<property name="ToolCategory.Butcher" value="0" param1="4" />
+				<property name="Sound_harvesting" value="open_animal" param1="organic" />
+				<property name="GrazeStart" value=".4" />
+				<property name="GrazeEnd" value=".5" />
+				<property name="SwingDegrees" value="50" />
+				<property name="UseGrazingHits" value="true" />
+				<property name="SwingDegrees" value="50" />
+				<property name="SwingAngle" value="135" />
+			</property>
+			<effect_group name="UltimateTool">
+				<passive_effect name="EntityDamage" operation="base_set" value="15" />
+				<passive_effect name="BlockDamage" operation="base_set" value="50" /> <!-- Default 85 -->
+				<passive_effect name="AttacksPerMinute" operation="base_set" value="70"
+					tags="perkMiner69r" />
+				<passive_effect name="StaminaLoss" operation="base_set" value="15" tags="primary" />
+				<passive_effect name="DegradationMax" operation="base_set" value="300,1100"
+					tier="1,6" tags="perkMiner69r" />
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1"
+					tags="perkMiner69r" />
+				<passive_effect name="MaxRange" operation="base_set" value="2.6" />
+				<passive_effect name="BlockRange" operation="base_set" value="3.5" />
+
+				<passive_effect name="ModSlots" operation="base_set" value="1,2,3,4,5,6"
+					tier="1,2,3,4,5,6" /> <!-- base 1,1,2,3,4,5 -->
+				<passive_effect name="ModPowerBonus" operation="perc_add" value=".10"
+					tags="EntityDamage,BlockDamage" />
+				<passive_effect name="ModPowerBonus" operation="base_add" value="300"
+					tags="EconomicValue" />
+
+				<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15" />
+				<passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" />
+				<passive_effect name="PlayerExpGain" operation="perc_add" value="-.1"
+					tags="Harvesting" />
+				<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" />
+				<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" />
+				<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15"
+					tags="perkMiner69r" />
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05" />
+				<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05" />
+
+				<passive_effect name="HarvestCount" operation="base_set" value=".6"
+					tags="butcherHarvest" />  <!-- Base .8 -->
+			</effect_group>
+			<effect_group name="Power Attack">
+				<passive_effect name="EntityDamage" operation="perc_add" value="1.5"
+					tags="secondary" />
+				<passive_effect name="BlockDamage" operation="perc_add" value="1.5" tags="secondary" />
+				<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.2"
+					tags="secondary" />
+				<passive_effect name="StaminaLoss" operation="base_add" value="40" tags="secondary" />
+			</effect_group>
+		</item>
+		
+		<!-- schematic -->
+		
+		<item name="ultimateToolSchematic">
+			<property name="Extends" value="schematicMaster" />
+			<property name="CreativeMode" value="Player" />
+			<property name="CustomIcon" value="meleeToolAxeT2SteelAxe" />
+			<property name="Unlocks" value="UltimateTool" />
+			<property name="DescriptionKey" value="ultimateToolSchematicDesc" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar"
+					cvar="UltimateTool" operation="set" value="1" />
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50" />
+			</effect_group>
+		</item>
+	</append>
+	
+	</config>

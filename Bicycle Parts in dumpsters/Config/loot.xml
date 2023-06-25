@@ -1,0 +1,17 @@
+<configs>
+
+
+	<!-- Bicycle Parts -->
+
+	<append xpath="/lootcontainers/lootcontainer[@name='dumpster']">
+		<item group="bicycleParts" loot_prob_template="Low" />
+		<item group="schematicsVehiclesT0" loot_prob_template="veryLow" />
+	</append>
+
+	<append xpath="/lootcontainers/lootcontainer[@name='dumpster']">
+		<item name="vehicleBicyclePlaceable" loot_prob_template="veryLow" />
+	</append>
+	
+	
+</configs>
+	

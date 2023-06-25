@@ -1,0 +1,13 @@
+<configs>
+
+		<!-- Healing Beds -->
+			<append xpath="/blocks/block[contains(@name,'Bed') and not(contains(@name,'terr')and not(contains(@name,'semi')))]">
+				<property name="BuffsWhenWalkedOn" value="Resting" />
+			</append>
+			<append xpath="/blocks/block[contains(@name,'bed') and not(contains(@name,'terr')and not(contains(@name,'semi')))]">
+				<property name="BuffsWhenWalkedOn" value="Resting" />
+			</append>
+			<append xpath="/blocks/block[contains(@name,'bedroll') and not(contains(@name,'terr')and not(contains(@name,'semi')))]">
+				<property name="BuffsWhenWalkedOn" value="Resting" />
+			</append>
+</configs>

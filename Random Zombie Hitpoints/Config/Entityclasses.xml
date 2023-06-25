@@ -1,0 +1,137 @@
+<config>
+
+	<!--==========
+	Adding tag to separate zombie tiers and be able to add random HP based on tiers ==========-->
+
+	<append
+		xpath="/entity_classes/entity_class/property[@name='Tags' and contains(@value, 'walker') and not(contains(@value, 'feral')) and not(contains(@value, 'radiated'))]/@value">
+		,slow</append>
+	<append
+		xpath="/entity_classes/entity_class/property[@name='Tags' and contains(@value, 'feral') and not(contains(@value, 'radiated'))]/@value">
+		,fast</append>
+	<append
+		xpath="/entity_classes/entity_class/property[@name='Tags' and contains(@value, 'radiated')]/@value">
+		,green</append>
+
+	<!--==========
+	Tier 1 Walker Zombies definition ==========-->
+
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="one">
+			<passive_effect name="HealthMax" operation="base_add" value="25">
+				<requirement name="EntityTagCompare" target="self" tags="slow" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE"
+					value="6" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="two">
+			<passive_effect name="HealthMax" operation="base_add" value="25">
+				<requirement name="EntityTagCompare" target="self" tags="slow" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE"
+					value="12" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="three">
+			<passive_effect name="HealthMax" operation="base_add" value="25">
+				<requirement name="EntityTagCompare" target="self" tags="slow" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,40" operation="GTE"
+					value="24" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="four">
+			<passive_effect name="HealthMax" operation="base_add" value="25">
+				<requirement name="EntityTagCompare" target="self" tags="slow" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,50" operation="GTE"
+					value="36" />
+			</passive_effect>
+		</effect_group>
+	</append>
+
+	<!--==========
+	Tier 2 Feral Zombies definition ==========-->
+
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="one">
+			<passive_effect name="HealthMax" operation="base_add" value="50">
+				<requirement name="EntityTagCompare" target="self" tags="fast" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE"
+					value="6" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="two">
+			<passive_effect name="HealthMax" operation="base_add" value="50">
+				<requirement name="EntityTagCompare" target="self" tags="fast" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE"
+					value="12" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="three">
+			<passive_effect name="HealthMax" operation="base_add" value="50">
+				<requirement name="EntityTagCompare" target="self" tags="fast" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,40" operation="GTE"
+					value="24" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="four">
+			<passive_effect name="HealthMax" operation="base_add" value="50">
+				<requirement name="EntityTagCompare" target="self" tags="fast" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,50" operation="GTE"
+					value="36" />
+			</passive_effect>
+		</effect_group>
+	</append>
+
+	<!--==========
+	Tier 3 Radiated Zombies definition ==========-->
+
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="one">
+			<passive_effect name="HealthMax" operation="base_add" value="100">
+				<requirement name="EntityTagCompare" target="self" tags="green" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,20" operation="GTE"
+					value="6" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="two">
+			<passive_effect name="HealthMax" operation="base_add" value="100">
+				<requirement name="EntityTagCompare" target="self" tags="green" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,30" operation="GTE"
+					value="12" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="three">
+			<passive_effect name="HealthMax" operation="base_add" value="100">
+				<requirement name="EntityTagCompare" target="self" tags="green" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,40" operation="GTE"
+					value="24" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	<append xpath="/entity_classes/entity_class[contains (@name, 'zombie')]">
+		<effect_group name="four">
+			<passive_effect name="HealthMax" operation="base_add" value="100">
+				<requirement name="EntityTagCompare" target="self" tags="green" />
+				<requirement name="RandomRoll" seed_type="Item" min_max="1,50" operation="GTE"
+					value="36" />
+			</passive_effect>
+		</effect_group>
+	</append>
+	
+	
+	</config>
